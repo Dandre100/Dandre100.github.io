@@ -1,6 +1,24 @@
-html {
-    font-family: sans-serif;
+div {
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(135deg, #b30000, #660000);
+    border-radius: 12px;
+    box-shadow: 10px 10px 25px rgba(100, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+
   }
-  
-  /* Your CSS below here */
-  
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+  }
