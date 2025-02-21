@@ -2,17 +2,25 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+div {
+    color:#999999;
+    font-size:23px;
+    font-family:sans-serif;
+    font-weight: bold;
 
+
+}
   
   h1 {
     color: #e242ac;
     font-size: 3em;
     font-family: Georgia, "Times New Roman", Times, serif;
-    border-bottom: 20px dotted purple;
+    border-bottom: 15px dotted purple;
   }
   
   h2 {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-style: italic;
   }
   
   .job-title {
@@ -20,11 +28,27 @@ body {
     font-weight: bold;
   }
   
-  a:link,
-  a:visited {
-    color: #fb6542;
+  
+  a:active{
+    color:green;
+    color:red;
   }
+  a:visited {
+    color: #42fb79;
+  }
+
   
   a:hover {
     text-decoration: purple;
   }
+
+  ul{
+    border: purple 7px;
+    border-style: solid;
+    padding: 20px;
+    
+  }
+
+li{
+    font-size:  20px;
+}
