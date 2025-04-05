@@ -1,25 +1,29 @@
-html, body {
-    margin: 0;
-  }
-  
-  html {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    height: 100%;
-  }
-  
-  body {
-    overflow: hidden;
-    height: inherit;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    letter-spacing: -1px;
-    position: absolute;
-    margin: 0;
-    top: -4px;
-    right: 5px;
-  
-    color: transparent;
-    text-shadow: 0 0 4px white;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1;
+}
+
+p {
+  position: absolute;
+  margin: 0;
+  top: 35px;
+  right: 5px;
+  color: #aaa;
+}
