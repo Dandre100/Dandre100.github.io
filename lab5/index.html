@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>Accessibility Assessment</title>
 
-    <title>Accessibility assessment</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!-- HTML5 semantic elements fix for old IE versions -->
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
 
   <body>
-    <div class="header">
-      <font size="7">Welcome to our wildlife website</font>
-    </div>
+    <header class="header">
+      <h1>Welcome to our wildlife website</h1>
+    </header>
 
-    <div class="nav">
+    <nav class="nav">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Our team</a></li>
@@ -26,11 +26,12 @@
         <li><a href="#">Blog</a></li>
       </ul>
 
-      <form class="search">
-        <input type="search" name="q" placeholder="Search query">
+      <form class="search" role="search" aria-label="Site search">
+        <label for="search-box" class="visually-hidden">Search</label>
+        <input id="search-box" type="search" name="q" placeholder="Search query">
         <input type="submit" value="Go!">
       </form>
-    </div>
+    </nav>
 
     <main>
       <article>
@@ -49,14 +50,15 @@
         Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.
         <br><br>
         <table>
+          <caption>Bear Types and Characteristics</caption>
           <thead>
             <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
+              <th>Bear Type</th>
+              <th>Coat</th>
+              <th>Adult size</th>
+              <th>Habitat</th>
+              <th>Lifespan</th>
+              <th>Diet</th>
             </tr>
           </thead>
           <tbody>
@@ -79,53 +81,42 @@
           </tbody>
         </table>
 
-        <font size="5">Habitats and Eating habits</font>
-        <br><br>
-        Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
-        <br><br>
-        <img src="media/wild-bear.jpg">
-        <br><br>
-        Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
-        <br><br>
-        <img src="media/urban-bear.jpg">
-        <br><br>
-        Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.
-        <br><br>
-        <font size="5">Mating rituals</font>
-        <br><br>
-        Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.
-        <br><br>
-        The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.
-        <br><br>
+        <h3>Habitats and Eating habits</h3>
+        <p>Wild bears eat a variety of meat...</p>
+
+        <img src="media/wild-bear.jpg" alt="A wild bear in the forest">
+
+        <p>Urban bears have largely abandoned the old ways...</p>
+
+        <img src="media/urban-bear.jpg" alt="An urban bear near a dumpster">
+
+        <h3>Mating rituals</h3>
+        <p>Bears are romantic creatures...</p>
+
         <audio controls>
-          <source src="media/bear.mp3" type="audio/mp3">
+          <source src="media/bear.mp3" type="audio/mpeg">
           <source src="media/bear.ogg" type="audio/ogg">
-          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+          Your browser does not support the audio element.
         </audio>
 
         <aside>
-
-          <font size="5">About the author</font>
-        <br><br>
-          Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.
-        <br><br>
-          He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.
-
+          <h3>About the author</h3>
+          <p>Evan Wild is an unemployed plumber... [bio continues]</p>
         </aside>
-        <section class="comments">
-          <div class="show-hide">Show comments</div>
 
-          <div class="comment-wrapper">
+        <section class="comments" aria-labelledby="comment-section-title">
+          <button class="show-hide" aria-expanded="false" aria-controls="comment-wrapper">Show comments</button>
 
-            <font size="6">Add comment</font>
+          <div id="comment-wrapper" class="comment-wrapper" hidden>
+            <h3 id="comment-section-title">Add comment</h3>
 
-            <form class="comment-form">
+            <form class="comment-form" aria-label="Comment form">
               <div class="flex-pair">
-                Your name:
+                <label for="name">Your name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name">
               </div>
               <div class="flex-pair">
-                Your comment:
+                <label for="comment">Your comment:</label>
                 <input type="text" name="comment" id="comment" placeholder="Enter your comment">
               </div>
               <div>
@@ -133,27 +124,19 @@
               </div>
             </form>
 
-            <font size="6">Comments</font>
-
-            <ul class="comment-container">
-
+            <h3>Comments</h3>
+            <ul class="comment-container" aria-live="polite">
               <li>
-
-                <p>Bob Fossil</p>
-
-                <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
-
+                <p><strong>Bob Fossil</strong></p>
+                <p>Oh I am so glad you taught me all about the big brown angry guys...</p>
               </li>
-
             </ul>
-
           </div>
         </section>
       </article>
 
-      <div class="secondary">
-        <font size="6">Related</font>
-
+      <aside class="secondary">
+        <h3>Related</h3>
         <ul>
           <li><a href="#">The trouble with Bees</a></li>
           <li><a href="#">The trouble with Otters</a></li>
@@ -161,14 +144,13 @@
           <li><a href="#">The trouble with Octopi</a></li>
           <li><a href="#">The trouble with Lemurs</a></li>
         </ul>
-      </div>
+      </aside>
     </main>
 
     <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+      <p>&copy; 2050 by nobody. All rights reversed.</p>
     </footer>
 
     <script src="main.js"></script>
-
   </body>
 </html>
